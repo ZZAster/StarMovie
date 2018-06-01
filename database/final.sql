@@ -42,7 +42,7 @@ alter TABLE rate add foreign key(rate_userId) references user(userId);
 
 alter table rate add foreign key(rate_movieId) references movie(movieID);
 
-create TABLE actor (actorId int not null,
+create TABLE actor (actorId int not null auto_increment,
 					actorName VARCHAR(45) not null,
                     actorSex varchar(45) not null,
 					actorNationality VARCHAR(45) not null,
@@ -55,7 +55,7 @@ create TABLE actor_has_movie (actor_actorId int not null,
                               constraint foreign key(actor_actorId) references actor(actorId),
                               constraint foreign key(actor_movieId) references movie(movieId));
                               
-create TABLE director (directorId int not null,
+create TABLE director (directorId int not null auto_increment,
 					   directorName VARCHAR(45) not null,
                        directorSex varchar(45) not null,
 					   directorNationality VARCHAR(45) not null,
