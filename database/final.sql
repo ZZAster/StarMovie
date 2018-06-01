@@ -1,6 +1,6 @@
-create database final;
+create database testfinal;
 
-use final;
+use testfinal;
 
 
 create TABLE user (userId int primary key auto_increment,
@@ -42,20 +42,22 @@ alter TABLE rate add foreign key(rate_userId) references user(userId);
 
 alter table rate add foreign key(rate_movieId) references movie(movieID);
 
-
 create TABLE actor (actorId int not null,
 					actorName VARCHAR(45) not null,
+                    actorSex varchar(45) not null,
 					actorNationality VARCHAR(45) not null,
                     primary key(actorId));
                     
 create TABLE actor_has_movie (actor_actorId int not null,
 							  actor_movieId int not null,
+                              actorSex varchar(45) not null,
                               primary key(actor_actorId, actor_movieId),
                               constraint foreign key(actor_actorId) references actor(actorId),
                               constraint foreign key(actor_movieId) references movie(movieId));
                               
 create TABLE director (directorId int not null,
 					   directorName VARCHAR(45) not null,
+                       directorSex varchar(45) not null,
 					   directorNationality VARCHAR(45) not null,
                        primary key(directorId));
                     
